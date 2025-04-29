@@ -1,4 +1,4 @@
-# JKFLIPFLOP-USING-IF-ELSE
+# EXP-07 JKFLIPFLOP-USING-IF-ELSE
 
 **AIM:** 
 
@@ -34,15 +34,48 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Initialize inputs J, K, and clock, and set the initial output Q.
+
+2.Monitor the rising edge of the clock signal.
+
+3.Use if-else to check if J=0 and K=0 (no change in Q).
+
+4.Use else if to set Q=1 if J=1 and K=0, or Q=0 if J=0 and K=1.
+
+5.Use else for J=1 and K=1 to toggle Q.
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
+
+Developed by:MITHUN S 
+
+RegisterNumber: 212224240088
 */
+```
+module exp7(J,K,clk,q,qbar); 
+input J,K,clk; 
+output reg q; 
+output reg qbar; 
+initial q=0; 
+initial qbar=1; 
+always @(posedge clk) 
+begin 
+q=((J&(~q))|((~K)&q));
+ qbar=~q; 
+end 
+endmodule
+```
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+![image](https://github.com/user-attachments/assets/6c8256d4-4928-4a80-92b3-3e0c9e407347)
+
+
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+![image](https://github.com/user-attachments/assets/210af10b-e65f-400f-b2e5-0ef284dc49f8)
+
 **RESULTS**
+
+To implement JK flipflop using verilog and validating their functionality using their functional tables is verified.
