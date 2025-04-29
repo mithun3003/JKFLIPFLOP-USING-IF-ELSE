@@ -53,7 +53,7 @@ Developed by:MITHUN S
 RegisterNumber: 212224240088
 */
 ```
-module exp7(J,K,clk,q,qbar); 
+module exp07(J,K,clk,q,qbar); 
 input J,K,clk; 
 output reg q; 
 output reg qbar; 
